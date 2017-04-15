@@ -9,36 +9,49 @@
 import Foundation
 import UIKit
 class CustomPresentController: NSObject, UIViewControllerAnimatedTransitioning {
+    var rect: CGRect?
+    var imageView: UIImageView?
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 2.0
+        return 1.0
+    }
+    
+    override init() {
+        super.init()
+    }
+    
+    init(rect: CGRect, imageView: UIImageView) {
+        
+        self.rect = rect
+        self.imageView = imageView
+        
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        
         let fromViewController = transitionContext.viewController(forKey: .from)
         let toViewController = transitionContext.viewController(forKey: .to)
         
-        let finalFrameForVC = transitionContext.finalFrame(for: toViewController!)
-        
-        let containerView = transitionContext.containerView
-        let bounds = UIScreen.main.bounds
-        
         guard let lFromVC = fromViewController,
-              let lToVC = toViewController
-        else { return }
+              let lToVC = toViewController as? ViewController2 else { return }
+        let containerView = transitionContext.containerView
         
-        lToVC.view.frame = finalFrameForVC.offsetBy(dx:0, dy: bounds.size.height)
+        lToVC.view.layoutIfNeeded()
+        let finalFrame = lToVC.imageView.frame
+        let snapshotView = imageView?.snapshotView(afterScreenUpdates: false)
+        snapshotView?.frame = rect!
+        imageView?.alpha = 0
         
-        containerView.addSubview(lToVC.view)
         
-        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: .curveLinear, animations: { 
+        containerView.addSubview(snapshotView!)
+        
+        
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 0.0, options: .curveLinear, animations: {
+            lFromVC.view.alpha = 0.0
             
-            lFromVC.view.alpha = 0.5
-            lToVC.view.frame = finalFrameForVC
-            
+            snapshotView?.frame = finalFrame
         }) { (finished) in
-            
+            snapshotView?.removeFromSuperview()
+            containerView.addSubview(lToVC.view)
             transitionContext.completeTransition(true)
             lFromVC.view.alpha = 1.0
         }

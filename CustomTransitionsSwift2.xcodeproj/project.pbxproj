@@ -15,6 +15,9 @@
 		7C9C72141E98DFC800CF807A /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C72131E98DFC800CF807A /* ViewController2.swift */; };
 		7C9C72161E98E31900CF807A /* CustomPresentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C72151E98E31900CF807A /* CustomPresentController.swift */; };
 		7C9C72181E98ED1C00CF807A /* CustomDismissController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C72171E98ED1C00CF807A /* CustomDismissController.swift */; };
+		E138DE381E9ABA0A00A02E85 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138DE371E9ABA0A00A02E85 /* CollectionViewController.swift */; };
+		E138DE3B1E9AC56900A02E85 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138DE391E9AC56900A02E85 /* CustomCollectionViewCell.swift */; };
+		E138DE3C1E9AC56900A02E85 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E138DE3A1E9AC56900A02E85 /* CustomCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		7C9C72131E98DFC800CF807A /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		7C9C72151E98E31900CF807A /* CustomPresentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentController.swift; sourceTree = "<group>"; };
 		7C9C72171E98ED1C00CF807A /* CustomDismissController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDismissController.swift; sourceTree = "<group>"; };
+		E138DE371E9ABA0A00A02E85 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		E138DE391E9AC56900A02E85 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		E138DE3A1E9AC56900A02E85 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +68,16 @@
 			children = (
 				7C9C72011E98DF3000CF807A /* AppDelegate.swift */,
 				7C9C72151E98E31900CF807A /* CustomPresentController.swift */,
+				7C9C72171E98ED1C00CF807A /* CustomDismissController.swift */,
 				7C9C72031E98DF3000CF807A /* ViewController.swift */,
 				7C9C72131E98DFC800CF807A /* ViewController2.swift */,
 				7C9C72051E98DF3000CF807A /* Main.storyboard */,
+				E138DE371E9ABA0A00A02E85 /* CollectionViewController.swift */,
 				7C9C72081E98DF3000CF807A /* Assets.xcassets */,
 				7C9C720A1E98DF3000CF807A /* LaunchScreen.storyboard */,
 				7C9C720D1E98DF3000CF807A /* Info.plist */,
-				7C9C72171E98ED1C00CF807A /* CustomDismissController.swift */,
+				E138DE391E9AC56900A02E85 /* CustomCollectionViewCell.swift */,
+				E138DE3A1E9AC56900A02E85 /* CustomCollectionViewCell.xib */,
 			);
 			path = CustomTransitionsSwift2;
 			sourceTree = "<group>";
@@ -135,6 +144,7 @@
 				7C9C720C1E98DF3000CF807A /* LaunchScreen.storyboard in Resources */,
 				7C9C72091E98DF3000CF807A /* Assets.xcassets in Resources */,
 				7C9C72071E98DF3000CF807A /* Main.storyboard in Resources */,
+				E138DE3C1E9AC56900A02E85 /* CustomCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +155,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E138DE381E9ABA0A00A02E85 /* CollectionViewController.swift in Sources */,
+				E138DE3B1E9AC56900A02E85 /* CustomCollectionViewCell.swift in Sources */,
 				7C9C72161E98E31900CF807A /* CustomPresentController.swift in Sources */,
 				7C9C72041E98DF3000CF807A /* ViewController.swift in Sources */,
 				7C9C72021E98DF3000CF807A /* AppDelegate.swift in Sources */,
@@ -313,6 +325,7 @@
 				7C9C72121E98DF3000CF807A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

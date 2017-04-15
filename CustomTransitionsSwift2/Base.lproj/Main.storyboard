@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GaM-N1-1UQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ooC-dr-UnE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -66,10 +66,91 @@
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="pBb-o4-n6r">
+            <objects>
+                <collectionViewController id="7AL-Jm-uVD" customClass="CollectionViewController" customModule="CustomTransitionsSwift2" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TY9-sm-H2A">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mQN-RZ-cS1">
+                            <size key="itemSize" width="103" height="82"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="pzE-iS-TaR">
+                                <rect key="frame" x="0.0" y="0.0" width="103" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="103" height="82"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="7AL-Jm-uVD" id="QZ4-CV-uBR"/>
+                            <outlet property="delegate" destination="7AL-Jm-uVD" id="9EC-VZ-mEa"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="NJp-GB-Cwy"/>
+                    <connections>
+                        <segue destination="OH2-Kv-TfV" kind="presentation" identifier="segue" id="gO7-Qa-lol"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9SH-QP-Em5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1944.8" y="821.73913043478262"/>
+        </scene>
         <!--View Controller2-->
+        <scene sceneID="JHE-6H-hwf">
+            <objects>
+                <viewController id="OH2-Kv-TfV" customClass="ViewController2" customModule="CustomTransitionsSwift2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hIz-GR-avc"/>
+                        <viewControllerLayoutGuide type="bottom" id="de0-Ay-yx0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FGG-J4-eLO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdj-Hl-ufi">
+                                <rect key="frame" x="16" y="28" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="dissmissedPressed:" destination="OH2-Kv-TfV" eventType="touchUpInside" id="YuH-dC-gyl"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x0T-dD-YnW">
+                                <rect key="frame" x="0.0" y="233" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="SSW-Gd-Xnp"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="x0T-dD-YnW" firstAttribute="leading" secondItem="FGG-J4-eLO" secondAttribute="leading" id="26p-vn-sgg"/>
+                            <constraint firstItem="x0T-dD-YnW" firstAttribute="centerX" secondItem="FGG-J4-eLO" secondAttribute="centerX" id="4Aq-dD-6m0"/>
+                            <constraint firstAttribute="trailing" secondItem="x0T-dD-YnW" secondAttribute="trailing" id="UJJ-qa-qrR"/>
+                            <constraint firstItem="x0T-dD-YnW" firstAttribute="centerY" secondItem="FGG-J4-eLO" secondAttribute="centerY" id="ZcU-Gd-2SH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="x0T-dD-YnW" id="hhS-Ds-0sH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7h3-Yc-HSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2808.8000000000002" y="796.55172413793105"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="QXq-JI-qAe">
             <objects>
-                <viewController id="PrC-8O-Fg4" customClass="ViewController2" customModule="CustomTransitionsSwift2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PrC-8O-Fg4" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GKy-SF-1tR"/>
                         <viewControllerLayoutGuide type="bottom" id="fac-LT-CQu"/>
@@ -87,9 +168,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHg-81-Onm">
                                 <rect key="frame" x="163" y="318.5" width="48" height="30"/>
                                 <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="dissmissedPressed:" destination="PrC-8O-Fg4" eventType="touchUpInside" id="GN4-rf-Jh1"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -124,8 +202,26 @@
             </objects>
             <point key="canvasLocation" x="390" y="139"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Lo8-mq-6vF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ooC-dr-UnE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ROn-Xx-6yI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7AL-Jm-uVD" kind="relationship" relationship="rootViewController" id="d7h-l1-Fx0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lIW-gp-ksP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1145" y="823"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="image1" width="884" height="557"/>
+        <image name="image1" width="1768" height="1114"/>
     </resources>
 </document>

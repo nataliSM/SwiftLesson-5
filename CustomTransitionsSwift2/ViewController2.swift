@@ -10,9 +10,11 @@ import UIKit
 
 class ViewController2: UIViewController {
 
+    @IBOutlet  weak var imageView: UIImageView!
+    open var image: UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        imageView.image = image
         // Do any additional setup after loading the view.
     }
 
